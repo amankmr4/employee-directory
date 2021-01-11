@@ -1,13 +1,12 @@
 import React from "react";
-import Title from "./components/Title"
-import SearchBar from "./components/SearchBar"
-import ResultsTable from "./components/ResultsTable"
+import MainPage from "./components/MainPage"
+
+
+
 function App() {
   return (
     <div>
-      <Title />
-      <SearchBar />
-      < ResultsTable />
+      <MainPage />
     </div>
 
   )
