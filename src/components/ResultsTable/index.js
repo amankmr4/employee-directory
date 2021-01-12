@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResultsTable() {
+function ResultsTable(props) {
     return (
         <table>
             <thead>
@@ -13,18 +13,17 @@ function ResultsTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
+                {props.results.map((people, i) =>
+                    <tr>
+                        <td>{people.name.first} {people.name.last}</td>
+                        <td>{people.email}</td>
+                        <td>{people.phone}</td>
+                        <td>{people.dob.date.substring(0, 10)}</td>
+                    </tr>
+                )}
             </tbody>
         </table>
+
     );
 }
 
