@@ -26,12 +26,16 @@ class MainPage extends Component {
 
 
     render() {
-        const people = this.state.results
+        const filteredList = this.state.results.filter((item) => {
+            let values = item.name.first + item.name.last;
+            values = values.toLowerCase();
+            return values.indexOf(this.state.search.toLowerCase()) !== -1
+        })
         return (
             <div>
                 <Title />
                 <SearchBar handleInput={this.handleInput} />
-                <ResultsTable results={people} />
+                <ResultsTable results={filteredList} />
             </div>
         )
 
