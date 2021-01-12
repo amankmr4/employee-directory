@@ -1,11 +1,11 @@
 import React from "react";
 
-function SearchBar() {
+function SearchBar(props) {
 
     return (
         <form>
             <label>Search For Name</label>
-            <input type="text">
+            <input type="text" onChange={props.handleInput}>
             </input>
         </form>
     )

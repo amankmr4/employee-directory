@@ -14,7 +14,7 @@ function ResultsTable(props) {
             </thead>
             <tbody>
                 {props.results.map((people, i) =>
-                    <tr>
+                    <tr key={i}>
                         <td>{people.name.first} {people.name.last}</td>
                         <td>{people.email}</td>
                         <td>{people.phone}</td>

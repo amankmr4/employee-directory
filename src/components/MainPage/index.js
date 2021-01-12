@@ -18,6 +18,10 @@ class MainPage extends Component {
             .catch(err => console.log(err))
     }
 
+    handleInput = (e) => {
+        this.setState({ search: e.target.value })
+    }
+
 
 
 
@@ -26,7 +30,7 @@ class MainPage extends Component {
         return (
             <div>
                 <Title />
-                <SearchBar />
+                <SearchBar handleInput={this.handleInput} />
                 <ResultsTable results={people} />
             </div>
         )
