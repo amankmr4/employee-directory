@@ -15,9 +15,10 @@ function ResultsTable(props) {
             <tbody>
                 {props.results.map((people, i) =>
                     <tr key={i}>
+                        <td><img src={people.picture.large} alt="profile"></img></td>
                         <td>{people.name.first} {people.name.last}</td>
-                        <td>{people.email}</td>
                         <td>{people.phone}</td>
+                        <td>{people.email}</td>
                         <td>{people.dob.date.substring(0, 10)}</td>
                     </tr>
                 )}
