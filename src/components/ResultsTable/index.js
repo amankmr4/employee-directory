@@ -3,11 +3,11 @@ import './styles.css'
 
 function ResultsTable(props) {
     return (
-        <table>
+        <table className="table table-striped">
             <thead>
                 <tr>
                     <th>Image</th>
-                    <th><button onClick={props.handleSort} data-type={props.sorted}>Name</button></th>
+                    <th><button onClick={props.handleSort} data-type={props.sorted} className="btn btn-link">Name</button></th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>DOB</th>
