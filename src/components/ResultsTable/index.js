@@ -1,4 +1,5 @@
 import React from "react";
+import './styles.css'
 
 function ResultsTable(props) {
     return (
@@ -24,6 +25,8 @@ function ResultsTable(props) {
                 )}
             </tbody>
         </table>
+
+
 
     );
 }
