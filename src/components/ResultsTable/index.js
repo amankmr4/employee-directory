@@ -6,7 +6,7 @@ function ResultsTable(props) {
             <thead>
                 <tr>
                     <th>Image</th>
-                    <th>Name</th>
+                    <th><button onClick={props.handleSort} data-type={props.sorted}>Name</button></th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>DOB</th>

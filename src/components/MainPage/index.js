@@ -8,7 +8,8 @@ import API from "../../utils/API"
 class MainPage extends Component {
     state = {
         search: "",
-        results: []
+        results: [],
+        sorted: true
     }
 
 
@@ -21,6 +22,22 @@ class MainPage extends Component {
     handleInput = (e) => {
         this.setState({ search: e.target.value })
     }
+
+    handleSort = () => {
+        if (this.state.sorted === true) {
+            this.setState({ sorted: false })
+            const ascending = this.state.results.sort((a, b) => (a.name.first + a.name.last > b.name.first + b.name.last) ? 1 : -1)
+            this.setState({ results: ascending })
+
+        } else {
+            this.setState({ sorted: true })
+            const descending = this.state.results.sort((a, b) => (a.name.first + a.name.last > b.name.first + b.name.last) ? -1 : 1)
+            this.setState({ results: descending })
+
+        }
+    }
+
+
 
 
 
@@ -35,7 +52,7 @@ class MainPage extends Component {
             <div>
                 <Title />
                 <SearchBar handleInput={this.handleInput} />
-                <ResultsTable results={filteredList} />
+                <ResultsTable results={filteredList} sorted={this.state.sorted} handleSort={this.handleSort} />
             </div>
         )
 
